@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <string.h>
+#define nalunos  5
+int main() {
+	int i,nota,aluno[nalunos]={0,0,99,7,0};
+ 	float media,PalAC,PalAB,qtdap =0,qtdrp =0,qtdpas =0,qtdab,PalRP,PalAP;
+ 	
+ 	for (i = 0 ; i < nalunos;i++ ){
+		 printf("informe a nota do aluno 0 a 10 :");
+		 scanf("%i",&nota);
+		 aluno[0] = aluno[0] + nota;
+		 if (nota > aluno[1]) {
+			 aluno[1] = nota;
+		 }
+		 if (nota < aluno[2]) {
+			 aluno[2] = nota;
+		 }
+		 if (nota <= aluno[3]){
+			 qtdab++;
+		 } else
+		 {
+			 qtdpas++;
+		 }
+
+		 	 media = aluno[0]/nalunos;
+		 if (nota >=media){
+			 qtdap++;
+		 }else
+		 {
+			 qtdrp++;
+		 } 
+		 	 
+		 	 
+	 }
+	 
+	 PalAC=(qtdap*100)/nalunos;
+	 PalAB=(qtdrp*100)/nalunos;
+	 PalRP=(qtdab*100)/nalunos;
+	 PalAP=(qtdpas*100)/nalunos;
+	 printf("media das notas  :%2.f\n",media);
+	 printf("-----------------------------------\n");
+	 printf("maior nota  :%i\n",aluno[1]);
+	 printf("menor nota  :%i\n",aluno[2]);
+	 printf("-----------------------------------\n");
+	 printf("Alunos Que Tiraram Mais de 7.\n\n");
+	 printf("Quantidade de Alunos Aprovados:  %2.f\n",qtdap);
+	 printf("Quantidade de Alunos Reprovados:  %2.f\n",qtdrp);
+	 printf("-----------------------------------\n");
+	 printf("percentual de alunos aprovados:  %.2f\n",PalRP);
+	 printf("percentual de alunos reprovados:  %.2f\n",PalAP);
+	 printf("-----------------------------------\n");
+	 printf("percentual de alunos acima da media:  %.2f\n",PalAC);
+	 printf("percentual de alunos abaixo da media:  %.2f\n",PalAB);
+
+}
+
